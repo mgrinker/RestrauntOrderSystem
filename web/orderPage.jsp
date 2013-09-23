@@ -5,7 +5,7 @@
 --%>
 
 <%@page import="java.text.DecimalFormat"%>
-<%@page import="models.MenuItems"%>
+<%@page import="models.MenuItem"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -29,7 +29,7 @@
             List menuList = (List)request.getAttribute("menuList");
             int arraySize = menuList.size();
             for(int i = 0; i < menuList.size(); i++){
-            MenuItems item = (MenuItems)menuList.get(i);
+            MenuItem item = (MenuItem)menuList.get(i);
         %>
 
                 <tr>

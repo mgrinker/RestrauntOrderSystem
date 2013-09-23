@@ -7,16 +7,19 @@ import java.util.List;
  *
  * @author mgrinker
  */
-public class MenuItems {
+public class MenuItem {
     
     private String item = "";
     private double price = 0.0;
 
-    public MenuItems(String item, double price) {
+    public MenuItem() {
+    }
+
+    public MenuItem(String item, double price) {
         this.item = item;
         this.price = price;
     }
-
+    
     /**
      * @return the item
      */
@@ -44,12 +47,5 @@ public class MenuItems {
     public void setPrice(double price) {
         this.price = price;
     }
-
-    
-    
-   
-    
-    
-    
     
 }

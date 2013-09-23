@@ -1,5 +1,5 @@
 
-<%@page import="models.MenuItems"%>
+<%@page import="models.MenuItem"%>
 <%@page import="java.util.List"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -45,7 +45,7 @@
 
             <tr>
                 <td><%= items.get(i) %></td>
-                <td>$<%= prices.get(i)%></td>
+                <td>$<%= prices.get(i).toString() %></td>
 
             </tr>
         <%
