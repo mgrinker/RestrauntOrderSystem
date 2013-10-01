@@ -1,7 +1,7 @@
 package controllers;
 
 import java.io.IOException;
-import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -35,7 +35,6 @@ public class ReceiptPageController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        DecimalFormat dollar = new DecimalFormat("#.00");
 
         List items = new ArrayList();
         List prices = new ArrayList();
@@ -54,19 +53,19 @@ public class ReceiptPageController extends HttpServlet {
         }
         
         ReceiptCalculator calc = new ReceiptCalculator();
-        
+        NumberFormat nf = NumberFormat.getCurrencyInstance();
         String sTotal = "";
         double total = calc.getTotal(prices);
-        sTotal = "" + total;
+        sTotal = nf.format(total);
         
         String sTax = "";
         double tax = calc.getTax();
-        sTax = "" + tax;
+        sTax = nf.format(tax);
 
                        
         String sFianlTotal = "";
         double finalTotal = calc.getFinalTotal();
-        sFianlTotal = "" + finalTotal;
+        sFianlTotal = nf.format(finalTotal);
         
         
         

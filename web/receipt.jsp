@@ -1,4 +1,5 @@
 
+<%@page import="java.text.NumberFormat"%>
 <%@page import="models.MenuItem"%>
 <%@page import="java.util.List"%>
 <%@page import="java.text.DecimalFormat"%>
@@ -18,7 +19,7 @@
         
         
        <% 
-           DecimalFormat dollar = new DecimalFormat("#.00");
+           NumberFormat nf = NumberFormat.getCurrencyInstance();
            
            String fianlTot = "No Final Total available";
                 Object finTotalObj = request.getAttribute("finalTotal");
@@ -56,17 +57,17 @@
         </tr>
         <tr>
             <td style="text-align: right">Sub-Total: </td>
-            <td>$<%= tot %></td>
+            <td><%= tot %></td>
         </tr>
         
         <tr>
             <td style="text-align: right">Tax: </td>
-            <td>$<%= tax %></td>
+            <td><%= tax %></td>
         </tr>
         
         <tr>
             <td style="text-align: right">Total: </td>
-            <td>$<%= fianlTot %></td>
+            <td><%= fianlTot %></td>
         </tr>
         </table>
         <br/>

@@ -16,6 +16,8 @@
         <h1>Restaurant Ordering System</h1>
         <div id="content">
             <a href="OrderPageController" style="font-size: 20px">Go to order Page</a>
+            <br/>
+            <a href="AdminController?action=listItems" style="font-size: 20px">Go to Administration page</a>
         </div>
 
     </body>

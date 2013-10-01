@@ -9,12 +9,19 @@ import java.util.List;
  */
 public class MenuItem {
     
+    private int ID;
     private String item = "";
     private double price = 0.0;
-
+    
     public MenuItem() {
     }
 
+    public MenuItem(int ID, String item, double price) {
+        this.ID = ID;
+        this.item = item;
+        this.price = price;
+    }
+    
     public MenuItem(String item, double price) {
         this.item = item;
         this.price = price;
@@ -46,6 +53,20 @@ public class MenuItem {
      */
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    /**
+     * @return the ID
+     */
+    public int getID() {
+        return ID;
+    }
+
+    /**
+     * @param ID the ID to set
+     */
+    public void setID(int ID) {
+        this.ID = ID;
     }
     
 }

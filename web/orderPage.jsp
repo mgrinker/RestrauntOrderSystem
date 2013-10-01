@@ -4,7 +4,7 @@
     Author     : mgrinker
 --%>
 
-<%@page import="java.text.DecimalFormat"%>
+<%@page import="java.text.NumberFormat"%>
 <%@page import="models.MenuItem"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
@@ -25,7 +25,7 @@
             <table>
 
         <%
-            DecimalFormat dollar = new DecimalFormat("#.00");
+            NumberFormat nf = NumberFormat.getCurrencyInstance();
             List menuList = (List)request.getAttribute("menuList");
             int arraySize = menuList.size();
             for(int i = 0; i < menuList.size(); i++){
@@ -34,7 +34,7 @@
 
                 <tr>
                     <td><input type="checkbox" name="item<%= i %>" value="<%= item.getItem() %>"><%= item.getItem() %></td>
-                    <td>$<%= dollar.format(item.getPrice()) %></td>
+                    <td><%= nf.format(item.getPrice()) %></td>
                     <td><input type="hidden" name="price<%= i %>" value="<%= item.getPrice()%>"/></td>
                 </tr>
         <%
